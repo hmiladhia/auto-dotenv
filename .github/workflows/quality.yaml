@@ -1,10 +1,6 @@
 name: 🚧 Quality Gates
 
-on:
-  push:
-  pull_request:
-    branches: [ main ]
-  workflow_call:
+on: [push, workflow_call]
 
 jobs:
   linting:
