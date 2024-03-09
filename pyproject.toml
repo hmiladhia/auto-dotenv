@@ -1,5 +1,5 @@
 [project]
-name = "auto-dotenv"
+name = "pyauto-dotenv"
 version = "0.1.0"
 description = "Automatically load .env variables if auto-dotenv is installed"
 keywords=['environment variables', 'configurations', 'secrets', 'env', 'dotenv']
