@@ -1,0 +1,17 @@
+name: 🚧 Quality Gates
+
+on:
+  push:
+  pull_request:
+    branches: [ main ]
+  workflow_call:
+
+jobs:
+  linting:
+    name: 🕵️‍♂️ Linting
+    uses: ./.github/workflows/linting.yaml
+
+  tests:
+    name: 🔬 Tests
+    needs: [linting]
+    uses: ./.github/workflows/tests.yaml
