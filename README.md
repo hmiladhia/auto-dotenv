@@ -1,4 +1,9 @@
 # auto-dotenv
+![PyPI](https://img.shields.io/pypi/v/auto-dotenv)
+![PyPI - License](https://img.shields.io/pypi/l/auto-dotenv)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/auto-dotenv)
+
+![Tests](https://github.com/hmiladhia/auto-dotenv/actions/workflows/quality.yaml/badge.svg)
 
 `auto-dotenv` is a python package that simplifies the process of loading environment variables from a `.env`
 file in your project. With `auto-dotenv`, you no longer need to manually load the `.env` file in your code.
