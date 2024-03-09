@@ -1,0 +1,36 @@
+name: 🚀 Upload Python Package to PYPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  quality:
+    name: 🚧 Quality Gates
+    uses: ./.github/workflows/quality.yaml
+
+  publish:
+    name: 🚀 Upload Python Package to PYPI
+    needs: [quality]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔍 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+
+      - name: 🔨 Build package
+        run: python -m build
+
+      - name: 🚀 Publish package
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
